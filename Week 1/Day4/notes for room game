@@ -1,0 +1,3 @@
+"pick the sword".gsub(" ", "_")
+
+text.send :upcase

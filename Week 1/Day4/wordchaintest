@@ -1,0 +1,17 @@
+require 'ruby-dictionary'
+
+class WordChain
+    def initialize(dictionary)
+        @dictionary = dictionary
+    end
+
+    def check(word)
+    	@dictionary.exists?(word)
+    end
+
+end
+
+dictionary = Dictionary.from_file("/usr/share/dict/words")
+my_chain = WordChain.new(dictionary)
+
+my_chain.check("bat")
