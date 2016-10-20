@@ -1,6 +1,27 @@
 require "pry"
+class Thing
+end
+
+class LightObject < Thing
+end
+
+class Sword < LightObject
+end
+
+class Banana < LightObject
+end
+
+class Book < LightObject
+end
+
+class Mushroom < LightObject
+end
+
+class Dog < Thing
+end
+
 class Hall
-	attr_reader :exits
+	attr_reader :exits, :items
 
 	def initialize
 		@exits = {
@@ -8,80 +29,88 @@ class Hall
 			W: "library",
 			E: "kitchen"
 		}
-		@description = "You are in a hall. There are doors to the north, west and east."
+		@description = "You are in a hall."
+		@items = [Sword.new]
 	end
 
 	def describe
-		puts "#{@description}"
+		puts "\n#{@description}"
 	end
 
 end
 
 
 class Kitchen
-	attr_reader :exits
+	attr_reader :exits, :items
 
 	def initialize
 		@exits = {
 			W: "hall"
 				}
-		@description = "You are in a kitchen. There is a door to the west."
+		@description = "You are in a kitchen."
+		@items = [Banana.new]
 	end
 
 	def describe
-		puts "#{@description}"
+		puts "\n#{@description}"
 	end
 
 end
 
 class Library
-	attr_reader :exits
+	attr_reader :exits, :items
 
 	def initialize
 		@exits = {
 			E: "hall"
 				}
-		@description = "You are in a library. There is a door to the east."
+		@description = "You are in a library.."
+		@items = [Book.new]
 	end
 
 	def describe
-		puts "#{@description}"
+		puts "\n#{@description}"
 	end
 
 end
 
 class Garden
-	attr_reader :exits, :description
+	attr_reader :exits, :items
 
 	def initialize
 		@exits = {
 			N: "forest",
 			S: "hall"
 				}
-		@description = "You are in a garden. There is a door to the south and a path to the north."
+		@description = "You are in a garden."
+		@items = [Dog.new]
 	end
 
 	def describe
-		puts "#{@description}"
+		puts "\n#{@description}"
 	end
 
 end
 
 class Forest
-	attr_reader :exits
+	attr_reader :exits, :items
 
 	def initialize
 		@exits = {
 			S: "garden"
 				}
-		@description = "You are in a forest. There is a path to the south."
+		@description = "You are in a forest."
+		@items = [Mushroom.new]
 	end
 
 	def describe
-		puts "#{@description}"
+		puts "\n#{@description}"
+
 	end
 
 end
+
+
 
 class Player
 	attr_accessor :current_room, :player_move
@@ -92,104 +121,72 @@ class Player
 	end
 
 	def describe_room
-		puts "#{@current_room.describe}"
+		puts "\n\n#{@current_room.describe}"
+		puts "Available exits: #{@current_room.exits.keys}"
 	end
 
 	def get_input
-		puts "What do you want to do?"
+		puts "\nWhat do you want to do?"
 		@player_move = gets.chomp
 	end
 
 	def move
 		this_room = @current_room.class
 		if @player_move == "quit"
-			puts "Thanks for playing!"
+			puts "\nThanks for playing!"
+		elsif @player_move == "search"
+			search
+		elsif @player_move == "take"
+			if current_room.items[0].is_a? LightObject
+				puts "You picked up the #{current_room.items[0].class.to_s.downcase}."
+			else
+				puts "\nYou can't pick that up!"
+			end
 		elsif @player_move == "N"
 			if current_room.exits.has_key?(:N)
 				new_room = current_room.exits[:N]
-				test = Object.const_get(new_room)
-
-				#new_room = self.const_get(current_room.exits[:N])
-				
-				#@current_room = new_room.new
-
-				#clazz = Object.const_get('ExampleClass')
+				room_type = eval(new_room.capitalize)
+				@current_room = room_type.new
+			else
+				puts "\nYou bang into a wall."
+			end
+		elsif @player_move == "E"
+			if current_room.exits.has_key?(:E)
+				new_room = current_room.exits[:E]
+				room_type = eval(new_room.capitalize)
+				@current_room = room_type.new
+			else
+				puts "\nYou bang into a wall."
+			end
+		elsif @player_move == "S"
+			if current_room.exits.has_key?(:S)
+				new_room = current_room.exits[:S]
+				room_type = eval(new_room.capitalize)
+				@current_room = room_type.new
+			else
+				puts "\nYou bang into a wall."
+			end
+		elsif @player_move == "W"
+			if current_room.exits.has_key?(:W)
+				new_room = current_room.exits[:W]
+				room_type = eval(new_room.capitalize)
+				@current_room = room_type.new
+			else
+				puts "\nYou bang into a wall."
+			end
+		else
+			puts "\nCommand not recognised."	
 		end
+	end
 
-		binding.pry
-		# elsif this_room == Hall
-		# 	case @player_move
-		# 	when "N"
-		# 		@current_room = Garden.new
-		# 	when "E"
-		# 		@current_room = Kitchen.new
-		# 	when "W"
-		# 		@current_room = Library.new
-		# 	when "S"
-		# 		puts "You bang into a wall."
-		# 		get_input
-		# 		move
-		# 	else
-		# 		"Command not recognised."
-		# 		get_input
-		# 		move			
-		# 	end
-		# elsif this_room == Garden
-		# 	case @player_move
-		# 	when "N"
-		# 		@current_room = Forest.new
-		# 	when "E","W"
-		# 		puts "You bang into a wall."
-		# 		get_input
-		# 		move
-		# 	when "S"
-		# 		@current_room = Hall.new
-		# 	else
-		# 		"Command not recognised."
-		# 		get_input
-		# 		move
-		# 	end
-		# elsif this_room == Kitchen
-		# 	case @player_move
-		# 	when "N","E","S"
-		# 		puts "You bang into a wall."
-		# 		get_input
-		# 		move
-		# 	when "W"
-		# 		@current_room = Hall.new
-		# 	else
-		# 		"Command not recognised."
-		# 		get_input
-		# 		move
-		# 	end
-		# elsif this_room == Library
-		# 	case @player_move
-		# 	when "N","W","S"
-		# 		puts "You bang into a wall."
-		# 		get_input
-		# 		move
-		# 	when "E"
-		# 		@current_room = Hall.new
-		# 	else
-		# 		"Command not recognised."
-		# 		get_input
-		# 		move
-		# 	end
-		# elsif this_room == Forest
-		# 	case @player_move
-		# 	when "S"
-		# 		@current_room = Garden.new
-		# 	when "E","W", "N"
-		# 		puts "You bang into a wall."
-		# 		get_input
-		# 		move
-		# 	else
-		# 		"Command not recognised."
-		# 		get_input
-		# 		move
-		# 	end
+	def search
+		@current_room.items.each do |item|
+		puts "\nYou found a #{item.class.to_s.downcase}."
 		end
+	end
 
+	def take
+		puts "\nYou picked up the item."
 	end
 
 	def turn
@@ -203,13 +200,11 @@ class Player
 	
 end 
 
-#hall = Room.new(["N","W","E"], "You are in a hall. There are doors to the north, west and east.")
-#garden = Room.new(["N","S"], "You are in a garden. There is a door to the south and a path to the north.")
-#forest = Room.new(["S"], "You are in a forest. There is a path to the south.")
-#kitchen = Room.new(["W"], "You are in a kitchen. There is a door to the west.")
-#library = Room.new(["E"], "You are in a library. There is a door to the east.")
+
+
 
 player = Player.new
 player.turn
+
 
 
