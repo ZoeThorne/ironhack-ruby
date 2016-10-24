@@ -24,8 +24,9 @@ def calculate(number)
 	result
 
 
-
 end
+
+
 end
 
 # end

@@ -11,7 +11,7 @@ describe FizzBuzz do
 	expect(fizzbuzz.calculate("3")).to eq("Fizz")
 	end
 
-	it "should return buzz if number is " do
+	it "should return buzz if number is 5" do
 	expect(fizzbuzz.calculate("5")).to eq("Buzz")
 	end
 
@@ -19,9 +19,14 @@ describe FizzBuzz do
 	expect(fizzbuzz.calculate("9")).to eq("Fizz")
 	end
 
+	it "should return buzz if number is 10" do
+	expect(fizzbuzz.calculate("10")).to eq("Buzz")
+	end
+
 	it "should return fizzbuzz if number is 15" do
 	expect(fizzbuzz.calculate("15")).to eq("FizzBuzz")
 	end
+
 
 
 end
