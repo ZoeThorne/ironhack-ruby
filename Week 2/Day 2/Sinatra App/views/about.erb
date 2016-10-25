@@ -1,0 +1,30 @@
+	<head>
+	<link rel="stylesheet" type="text/css" href="style.css"></head>
+
+	<body>
+	<h1>Hi there!</h1>
+	<h3>This is <%= @name %>'s <em>About Page</em></h3>
+	
+
+	<p>Today is <%= Date.today %> and the time is <%= Time.now.hour%> o'clock (ish)</p>
+
+	<% if Date.today.day == 25 && Date.today.month == 10 %>
+	<p>It's my <strong style="color: blue">birthday!</strong><p>
+	<% else %>
+	<p>Just another day.</p>
+	<% end %>
+		<img src="/monkey.jpg">
+	
+	<div>
+	<p id="foods">My favourite foods are:</p>
+	<ul>
+		<% @foods.each do |food| %>
+		<li> <%= food %></li>
+		<% end %>
+	</ul>
+	<p id="foods">(But not together)</p>
+	</div>
+
+	</body>
+
+

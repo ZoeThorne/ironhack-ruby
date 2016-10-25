@@ -1,0 +1,32 @@
+h1 {
+	text-align: center;
+	background-color: yellow;
+	padding: 10px;
+}
+
+h3 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+#foods {
+	text-align: left;
+}
+
+img {
+	float: right;
+	border-radius: 10px
+}
+
+div {
+	background-color: #d0d7e2;
+	padding: 10px;
+	border-radius: 10px
+}
+
+li {
+	color: #0a2654;
+}

@@ -1,0 +1,14 @@
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"></head>
+
+<body>
+
+<p>Hi there, <%= @user.capitalize %> !</p>
+<% if Date.today.day == 25 && Date.today.month == 10 && @user == 'zoe'%>
+	<p>Happy birthday!</p>
+	<% end %>
+<% if @user == 'frank'%>
+<img src="http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE4MDAzNDEwNjg4MTE2MjM4.jpg" style="height: 200px; width: 170px">
+<%end%>
+
+</body>
