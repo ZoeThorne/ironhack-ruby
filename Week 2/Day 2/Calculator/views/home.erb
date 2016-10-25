@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Calculator</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+<header>
+	<img src="https://www.charterbank.bank/images/calculator_banner_image_rdax_960x269.jpg">
+	<h1 id="title">The Most Amazing Calculator Ever</h1>
+</header>
+
+<h1>What would you like to do?</h1>
+
+  <form action="/calculate" method="POST">
+  	<input type="number" name="first_num" placeholder="1st number"> 
+  	<input type="number" name="second_num" placeholder="2nd number">
+  	
+  	<button type="submit" name="operation" value="addition">Add</button>
+  	<button type="submit" name="operation" value="subtraction">Subtract</button>
+  	<button type="submit" name="operation" value="division">Divide</button>
+    <button type="submit" name="operation" value="multiplication">Multiply</button>
+  </form>
+
+<h4>Right now in Barcelona, it is <%=Time.now.hour%>:<%=Time.now.min%>.</h4>
+<p>Choose a place to compare the time.</p>
+
+  <form action="/time" method="POST">
+  	<label for="london">London</label>
+  	<input type="radio" name="city" id="london" value="london">
+
+  	<label for="baghdad">Baghdad</label>
+  	<input type="radio" name="city" id="baghdad" value="baghdad">
+
+  <button type="submit" name="time_compare">Show me!</button>
+</body>
+</html>

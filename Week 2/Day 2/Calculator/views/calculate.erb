@@ -1,0 +1,22 @@
+	<header>
+  <img src="https://www.charterbank.bank/images/calculator_banner_image_rdax_960x269.jpg">
+  <h1 id="title">The Most Amazing Calculator Ever</h1>
+</header>
+
+  <%if @operation == "addition"%>
+		<% @result = @first + @second%>
+		<p><%=@first%> + <%=@second%> = <%=@result%></p>
+	<%elsif @operation == "subtraction"%>
+		<% @result = @first - @second%>
+  	<p><%=@first%> - <%=@second%> = <%=@result%></p>
+  	<%elsif @operation == "division"%>
+  		<% @result = @first / @second%>
+  	<p><%=@first%> / <%=@second%> = <%=@result%></p>
+  	<%elsif @operation == "multiplication"%>
+  		<% @result = @first * @second%>
+  	<p><%=@first%> x <%=@second%> = <%=@result%></p>
+	<%end%>
+  
+  <form action="/test" method="POST">
+   <button type="submit" name="btn" value=<%=@result%>>Use this result</button>
+   </form>
