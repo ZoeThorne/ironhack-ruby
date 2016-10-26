@@ -1,6 +1,7 @@
 require "pry"
 require "yaml/store"
 
+
 class ToDoList
 	attr_reader :tasks, :user
     def initialize(user)
@@ -30,6 +31,11 @@ class ToDoList
       	@todo_store[@user] = @tasks
   	end
 	end
+
+    def load_tasks
+        @tasks = YAML.load_file("./public/tasks.yml")
+        @tasks[@user]
+    end
 end
 
 class Task
@@ -63,21 +69,25 @@ class Task
     end
 end
 
+
+
 task1 = Task.new("Buy the milk")
 # puts task1.id
 # # 1
-# task2 = Task.new("Wash the car")
+task2 = Task.new("Wash the car")
+task3 = Task.new("Drink coffee")
 # puts task2.id
 # # 2
 todolist = ToDoList.new("Zoe")
 todolist.add_task(task1)
-# todolist.add_task(task2)
+todolist.add_task(task2)
+todolist.add_task(task3)
+todolist.save
 
-# puts task.complete?
-# task.complete!
-# puts task.complete?
-# task.make_incomplete!
-# puts task.complete?
+puts task.complete?
+task.complete!
+puts task.complete?
+task.make_incomplete!
+puts task.complete?
 
-binding.pry
 

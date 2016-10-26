@@ -1,8 +1,0 @@
----
-Zoe:
-- !ruby/object:Task
-  content: Buy the milk
-  id: 1
-  complete: false
-  created_at: 2016-10-24 18:28:42.064844970 +02:00
-  updated_at: 
