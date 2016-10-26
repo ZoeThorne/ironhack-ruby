@@ -1,0 +1,14 @@
+<p>Hello, <%=session[:user].capitalize%>!</p>
+
+<h1>Enter some text and choose what you would like to do with it</h1>
+
+<form action="/text" method="POST">
+	<input type="text" name="text" placeholder="Cool text goes here">
+
+	<button type="submit" name="method" value="shout">SHOUT</button>
+	<button type="submit" name="method" value="whisper"><em>whisper</em></button>
+	<button type="submit" name="method" value="alphabetise">Alphabetise</button>
+	<button type="submit" name="method" value="yoda">Yoda</button>
+</form>
+
+<a href="/logout">Log out</a>

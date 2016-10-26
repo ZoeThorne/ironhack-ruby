@@ -2,9 +2,9 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 
-# get "/" do
-# erb(:home)
-# end
+get "/" do
+erb(:home)
+end
 
 # get "/add" do
 #   erb(:add)
