@@ -1,2 +1,12 @@
-<h1>Here are your tasks:</h1>
+<h1>Here are the tasks for <%= @user %>:</h1>
+<% @tasks.each do |task| %>
+<li><% if task.complete == true %>
+		<strike><%= task.content %></strike> :<a href="/undo/<%=task.id%>"><em> Undo?</em> / </a><a href="/delete/<%=task.id%>"><em> Delete?</em></a><br>
+	<% else %>
+		<%= task.content %> :<a href="/complete/<%=task.id%>"><em> Complete?</em></a>
+	</li><br>
+	<% end %>
+<% end %>
+<br><br>
 
+<a href="/newtask">Create New Task</a>

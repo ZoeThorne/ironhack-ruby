@@ -7,7 +7,7 @@ class ToDoList
     def initialize(user)
         @tasks = []
         @user = user
-        @todo_store = YAML::Store.new("./public/tasks.yml")
+        @todo_store = YAML::Store.new("./lib/public/tasks.yml")
     end
 
     def add_task(task)
@@ -33,14 +33,14 @@ class ToDoList
 	end
 
     def load_tasks
-        @tasks = YAML.load_file("./public/tasks.yml")
-        @tasks[@user]
+        @tasks = YAML.load_file("./lib/public/tasks.yml")
+        @tasks = @tasks[@user]
     end
 end
 
 class Task
 
-	attr_reader :content, :id, :created_at
+	attr_reader :content, :id, :created_at, :complete, :updated_at
     @@current_id = 1
     def initialize(content)
         @content = content
@@ -84,10 +84,6 @@ todolist.add_task(task2)
 todolist.add_task(task3)
 todolist.save
 
-puts task.complete?
-task.complete!
-puts task.complete?
-task.make_incomplete!
-puts task.complete?
+
 
 
