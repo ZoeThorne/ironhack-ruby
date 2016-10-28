@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Movie Quiz</title>
+  <meta name="An IMDB movie quiz" content="Movie Quiz">
+  <meta name="Zoe Thorne">
+
+<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+
+<% if @guessed_film_date == @correct_film.release_date %>
+	<h1>Correct!</h1>
+<% else %>
+	<h1>Sorry, the answer was actually <%= @correct_film.title %></h1>
+<% end %>
+
+<a href="/">Home</a>
+</body>

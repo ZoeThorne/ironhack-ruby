@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Movie Quiz</title>
+  <meta name="An IMDB movie quiz" content="Movie Quiz">
+  <meta name="Zoe Thorne">
+
+<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+
+<h1>Which movie was released on <%= @correct_film.release_date %>?</h1>
+
+<% @films.each do |movie| %>
+	<div class="square">
+		<div class="content">
+			<img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" style="width: 150px; height: 180px">
+			<br>
+			<form action="/check" method="POST">
+			<button type="submit" name="movie" value="<%= movie.release_date %>"><%= movie.title %></button>
+			</form>
+		</div>
+	</div>
+<% end %>
+
+</body>
+
+

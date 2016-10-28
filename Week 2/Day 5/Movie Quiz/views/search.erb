@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Movie Quiz</title>
+  <meta name="An IMDB movie quiz" content="Movie Quiz">
+  <meta name="Zoe Thorne">
+
+<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+<div id="search">
+<h1>It's Quiz Time!</h1>
+<h3>Enter a word into the box to search for related movies:</h3>
+
+<form action="/get_movies" method="POST">
+	<input type="text" name="word" placeholder="What should your movie be related to?" style="width:250px">
+
+	<button type="submit" name="find">Find Movies</button>
+</form>
+</div>
+
+</body>
+</html>
