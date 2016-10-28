@@ -15,4 +15,4 @@ gem "rack"
 
 gem "rack-test"
 
-gem "imdb"
+gem "themoviedb"

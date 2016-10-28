@@ -16,5 +16,9 @@
 	<h1>Sorry, the answer was actually <%= @correct_film.title %></h1>
 <% end %>
 
-<a href="/">Home</a>
+<form action="/try_again" method="POST">
+	<button type="submit" name="new_guess">Try again</button>
+</form>
+
+<a href="/">New word</a>
 </body>

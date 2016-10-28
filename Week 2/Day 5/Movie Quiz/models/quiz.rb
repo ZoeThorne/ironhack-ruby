@@ -28,16 +28,7 @@ class Quiz
 		@correct_film = @movies.sample
 	end
 
-	# def english_title
-	# 	@movies.each do |movie|
-	# 		if (movie.also_known_as.find {|movie| movie[:version] == "USA"}) != nil
-	# 			english_title = movie.also_known_as.find {|movie| movie[:version] == "USA" }
-	# 			puts english_title[:title]
-	# 		else
-	# 			puts movie.title
-	# 		end
-	# 	end
-	# end
+
 
 end
 
@@ -50,14 +41,3 @@ quiz.add_movies
 
 
 
-# <% @films.each do |movie| %>
-# 	<% if (movie.also_known_as.find {|movie| movie[:version] == "USA"}) != nil %>
-# 		<% english_title = movie.also_known_as.find {|movie| movie[:version] == "USA" } %>
-# 		<p><%= english_title[:title] %></p>
-# 	<% elsif (movie.also_known_as.find {|movie| movie[:version] == "(original title)"}) != nil %>
-# 		<% original_title = movie.also_known_as.find {|movie| movie[:version] == "(original title)" } %>
-# 		<p><%= original_title[:title] %></p>
-# 	<% else %>
-# 		<p><%= movie.title %></p>
-# 	<% end %>
-# <% end %>
