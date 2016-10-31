@@ -1,0 +1,39 @@
+.nav {
+	background: white;
+	height: 100px;
+}
+
+.logo {
+	font-size: 34px;
+	padding: 20px;
+}
+
+.slideshow {
+	background: black;
+	height: 500px;
+}
+
+.red-section {
+	background: red;
+	height: 300px;
+}
+
+.projects-container {
+	background: white;
+	height: 300px;
+}
+
+.articles-container {
+	background: white;
+	height: 300px;
+}
+
+.bottom-nav {
+	background: #666;
+	height: 300px;
+}
+
+footer {
+	background: black;
+	height: 100px;
+}

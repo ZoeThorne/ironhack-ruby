@@ -1,0 +1,128 @@
+body {
+	background-image: url("https://trello-backgrounds.s3.amazonaws.com/53baf533e697a982248cd73f/960x960/4b4c1f7c6678833b87f3719d90a92d67/shutterstock_134707556.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+header {
+	color: white;
+	padding: 10px;
+
+}
+
+.content {
+
+	box-sizing: border-box;
+}
+
+.sidebar {
+	background: #cedbda;
+	box-sizing: border-box;
+
+}
+
+.sidebar-title {
+	float: right;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.content,.sidebar {
+	height: 500px;
+	box-sizing: border-box;
+}
+
+.subscribe_bar {
+	background: #d8d08f;
+	height: 50px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.board_menu {
+
+	height: 50px;
+	box-sizing: border-box;
+	color: white;
+	font-size: 16px;
+}
+
+.list {
+	background: lightblue;
+	box-sizing: border-box;
+	background-clip: padding-box;
+	border: 10px solid transparent;
+	border-radius: 20px
+}
+
+.item {
+	background: white;
+	margin: 5px 2px;
+	border-radius: 10px
+}
+
+.title {
+	background: lightblue;
+	height: 30px;
+	margin: 5px 2px;
+}
+
+span {
+	padding-left: 10px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.logo {
+	width: 100px;
+	height: 25px;
+	opacity: 0.4;
+}
+
+.btn {
+	float: right;
+	margin-left: 10px;
+}
+
+.btn-subscribe {
+	position: relative;
+	float: none;
+	margin-top: 10px;
+}
+
+
+.logo-small {
+	width:45px;
+	height: 45px;
+	margin: 5px;
+}
+
+.coloured-line {
+	border-radius: 10px;
+	height: 8px;
+	width: 25%;
+	margin: 5px;
+}
+
+p {
+	padding: 5px;
+}
+
+hr {
+	border-color: #939b9a;
+	width: 80%;
+	height: 1px;
+	margin: 5px 33px;
+}
+
+.tiny-pic {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	margin: 10px 5px;
+	float: left;
+}
+
+.activity {
+	margin-left: -19px;
+}
