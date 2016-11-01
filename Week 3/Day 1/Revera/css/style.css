@@ -1,11 +1,27 @@
 .nav {
 	background: white;
 	height: 100px;
+	display: inline-block;
+	width: 100%;
+}
+
+ul {
+	padding: 30px 3px;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+li {
+	display: inline-block;
+	padding-left: 10px;
 }
 
 .logo {
-	font-size: 34px;
+	font-size: 28px;
 	padding: 20px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .slideshow {
@@ -13,9 +29,25 @@
 	height: 500px;
 }
 
+.main-img {
+	width: 100%;
+	transparency: 0.3%;
+
+}
+
 .red-section {
 	background: red;
 	height: 300px;
+}
+
+.design {
+	color: white;
+
+}
+
+.design-logo {
+	height: 100px;
+	width: 100px;
 }
 
 .projects-container {
