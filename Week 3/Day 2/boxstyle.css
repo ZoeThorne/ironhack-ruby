@@ -1,0 +1,60 @@
+body {
+	background: #466368;
+	background: -webkit-linear-gradient(#cba5d1, #f4424e);
+	background: -moz-linear-gradient(#cba5d1, #f4424e);
+	background: linear-gradient(#cba5d1, #f4424e);
+	height: 1200px;
+}
+
+.box {
+	height: 20%;
+	background: lightblue;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 567px) {
+	.content {
+	padding: 15px;
+	margin: 10px;
+	height: 100%;
+	background: yellow;
+}
+}
+
+@media screen and (min-width: 568px) {
+	.content {
+	padding: 15px;
+	margin: 10px;
+	height: 100%;
+	background: blue;
+}
+}
+
+@media screen and (min-width: 992px) {
+	.content {
+	padding: 15px;
+	margin: 10px;
+	height: 100%;
+	background: red;
+}
+}
+
+@media screen and (min-width: 1200px) {
+	.content {
+	padding: 15px;
+	margin: 10px;
+	height: 100%;
+	background: black;
+}
+}
+
+
+
+
+
+
+
+
+.row {
+
+}
