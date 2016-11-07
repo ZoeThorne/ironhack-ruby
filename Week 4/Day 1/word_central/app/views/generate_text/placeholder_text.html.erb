@@ -1,0 +1,11 @@
+<h1>Here is your Lorem Discword text:</h1>
+
+<% if @choice == "paragraphs" %>
+	<% @number.times do %>
+		<p><%= @quotes.sample %></p>
+	<% end %>
+<% else %>
+	<%= (@split_quotes[0..@number - 1]).join(' ') %>
+<% end %>
+<br>
+<a href="/">Home</a>

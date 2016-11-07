@@ -1,0 +1,9 @@
+<form action="/asciis" method="post">
+  <div>
+    <label for="ascii_user_text">Word</label>
+    <textarea name="ascii[user_text]" id="ascii_user_text"></textarea>
+  </div>
+    <button type="submit">Submit word</button>
+    <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>

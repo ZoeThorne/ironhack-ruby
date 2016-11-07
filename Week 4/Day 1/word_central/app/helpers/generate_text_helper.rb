@@ -1,0 +1,2 @@
+module GenerateTextHelper
+end

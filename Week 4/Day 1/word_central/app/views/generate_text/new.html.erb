@@ -1,0 +1,16 @@
+<form action="/generate_text" method="post" id="text_generator">
+  <div>
+    <label for="number">Number</label>
+    <input type="number" id="number" name="number">
+
+    <select name="choose_form" form="text_generator">
+  <option value="words">Words</option>
+  <option value="paragraphs">Paragraphs</option>
+</select>
+
+  </div>
+    <button type="submit">Submit word</button>
+    <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>
+

@@ -1,0 +1,10 @@
+<h1>Your text:</h1>
+<%= @text %>
+<br>
+<h1>Word count:</h1>
+<%= @word_count %>
+<p>It would take on average <%= (@word_count.to_i/275) %> minutes to read this.</p>
+<p>Your most used words are: <% @most_used.each do |word| %>
+							<li><strong><%=  word[0] %></strong>   (<%= word[1] %> times)</li>
+							<% end %> </p>
+<a href="/">Home</a>
