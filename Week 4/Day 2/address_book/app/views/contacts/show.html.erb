@@ -1,0 +1,14 @@
+<h1><%= @name %></h1>
+<ul>
+	<li><%= @address %></li>
+	<li><%= @phone_number if @phone_number.present? %></li>
+	<li><%= @email if @email.present? %></li>
+</ul>
+
+<form action="/contacts/make_favourite" method="POST">
+	<button type="submit" name="id" value="<%= @id %>">Make favourite</button>
+	<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>
+
+<a href="/contacts">Return to contacts</a>

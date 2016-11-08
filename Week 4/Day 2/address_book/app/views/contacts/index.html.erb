@@ -1,0 +1,15 @@
+<h1>Contacts</h1>
+
+<ul>
+	<% @contacts.each do |contact| %>
+		<li>
+			<a href="/contacts/show/<%= contact.id%>"><%= contact.name %></a>
+			<%= "**Favourite**" if contact.favourite == true %>
+		</li>
+	<% end %>
+</ul>
+
+<a href="/contacts/new">Add new contact</a>
+<br>
+<a href="/contacts/favourites">See favourites</a>
+

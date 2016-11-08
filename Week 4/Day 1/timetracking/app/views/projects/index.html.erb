@@ -1,0 +1,11 @@
+<h1>Projects</h1>
+
+<ul>
+	<% @projects.each do |project| %>
+		<li>
+			<%= project.name %>
+			<%= " - #{project.description}" if project.description.present? %>
+			<%= "is completed" if project.completed? %>
+		</li>
+	<% end %>
+</ul>
