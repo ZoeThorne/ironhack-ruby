@@ -1,0 +1,27 @@
+<h1>Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Poster</th>
+      <th>Year</th>
+      <th>Synopsis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" style="height:50px"></td>
+        <td><%= movie.release_date %></td>
+        <td><%= movie.overview %></td>
+		<td><%= button_to 'Start a discussion', {:controller => "movies", :action => "create", :title => movie.title, :poster => movie.poster_path, :year => movie.release_date, :synopsis => movie.overview} , :method=>:post  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', movies_path %>

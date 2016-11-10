@@ -14,7 +14,7 @@ project2.time_entries.create hours: 1, minutes: 0, comment: 'improving the shiel
 project2.time_entries.create hours: 1, minutes: 0, comment: 'fighting the bad guys', date: DateTime.tomorrow
 
 Project.create name: 'Job Hunt', description: 'Look for a job'
-Project.create name: 'Housework', description: 'Do some chores'
+
 
 project3 = Project.create name: 'Housework', description: 'Do some chores'
 TimeEntry.create hours: 0, minutes: 30, comment: 'Washing the dishes', date: DateTime.now, project: project3

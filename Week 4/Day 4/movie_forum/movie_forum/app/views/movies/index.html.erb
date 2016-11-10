@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Movies</h1>
+
+<form action="/movies/search" method="POST">
+  <div>
+    <label for="searched_movie">Search</label>
+    <input type="text" name="searched_movie" id="searched_movie">
+  </div>
+
+  <button type="submit">Search</button>
+  <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Poster</th>
+      <th>Year</th>
+      <th>Synopsis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><img src="<%= movie.poster %>" style="height:50px"></td>
+        <td><%= movie.year %></td>
+        <td><%= movie.synopsis %></td>
+        <td><%= link_to 'View', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Remove', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>

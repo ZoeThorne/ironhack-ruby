@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user1 = User.create(name: "Testy McTestFace", email: "testy@gmail.com")
-user1.products.create(title: "violin", description: "A vintage violin played by Sherlock Holmes", deadline: DateTime.tomorrow, user: user1)
-user1.products.create(title: "napkin", description: "A napkin folder into a swan", deadline: DateTime.tomorrow, user: user1)
+user1.products.create(title: "violin", description: "A vintage violin played by Sherlock Holmes", deadline: DateTime.tomorrow)
+user1.products.create(title: "napkin", description: "A napkin folder into a swan", deadline: DateTime.tomorrow)
 
 user2 = User.create(name: "Zoe", email: "z@gmail.com")
-user2.products.create(title: "sloth", description: "A friendly animal", deadline: DateTime.today, user: user2)
+user2.products.create(title: "sloth", description: "A friendly animal", deadline: DateTime.tomorrow)
 
 user3 = User.create(name: "Nick", email: "n@gmail.com")

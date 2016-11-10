@@ -1,11 +1,15 @@
 <h1>Projects</h1>
 
+<%= render 'flash' %>
+
 <ul>
 	<% @projects.each do |project| %>
 		<li>
 			<%= link_to project.name, project_path(project.id) %>
 			<%= " - #{project.description}" if project.description.present? %>
 			<%= "is completed" if project.completed? %>
+
+			<%= link_to 'Delete', project_path(project.id), method: :delete, data: { confirm: 'Are you sure?'} %>
 		</li>
 	<% end %>
 </ul>
