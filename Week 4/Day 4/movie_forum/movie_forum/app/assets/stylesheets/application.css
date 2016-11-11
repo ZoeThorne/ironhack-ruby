@@ -13,3 +13,83 @@
  *= require_tree .
  *= require_self
  */
+body {
+	margin: 0;
+}
+
+/* Navigation Bar */
+
+container-fluid {
+	width: 100%;
+}
+
+nav {
+	background: linear-gradient(to bottom, #646464 0%,#0e0e0e 100%);
+	border-top: 1px solid #444444;
+	color: #fff;
+	font: 10pt Verdana, Arial, sans-serif;
+	height: 100%;
+	margin: -15px;
+	padding: 10px;
+    width: 100%;;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+
+}
+
+.logo {
+	background: yellow;
+	color: black;
+	padding: 10px;
+	text-align: center;
+	font-size: 38px;
+	font-weight:bold;
+	margin-left: 30px;
+	margin-top: 20px;
+	border-radius: 5px;
+
+}
+
+.title {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.link {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	padding-top: 20px;
+	margin-left: -110px;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.search-bar {
+	float: right;
+	display: inline-block;
+	width: 250px;
+	padding-top: 35px;
+	line-height: 2;
+	color:black;
+}
+
+.btn-md {
+	margin-left: 0;
+	margin-top: 10px;
+}
+
+/* Main Section */
+
+h1 {
+	text-align: center;
+}
+
+.main {
+	margin: 10px;
+	padding: 10px;
+	padding-top: 110px;
+}

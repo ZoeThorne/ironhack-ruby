@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MovieForum</title>
+    <title>EBMDB : Even Better Movie Database</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<header>
+  		<nav class="col-lg-12">
+  			<div class="row">
+
+  				<div class="col-lg-2 logo"><!-- Logo -->
+  					EB<br>
+  					MD
+  				</div>
+
+  				<div class="col-lg-7 title"><!-- Title -->
+  					<h1>Even Better Movie Database</h1>
+  				</div>
+
+  				<div class="col-lg-1 link"><!--Link-->
+  					<a href="/movies">Home</a>
+  				</div>
+
+  				<div class="col-lg-2 search-bar"><!-- Search Bar -->
+  					<form action="/movies/search" method="POST">
+  						<div>
+   						 	<input type="text" name="searched_movie" id="searched_movie" placeholder="Search for a movie...">
+   						 	<button type="submit" class="btn btn-primary btn-md">Search</button>
+  						</div>
+
+  							
+  							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					</form>
+  				</div>
+
+  			</div>
+  		</nav>
+  	</header>
+  	<div class="container-fluid main">
     <%= yield %>
+    </div>
   </body>
 </html>

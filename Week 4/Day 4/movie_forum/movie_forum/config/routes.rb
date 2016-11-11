@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :movies
+
+  resources :movies do
+ 	resources :comments
+	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   post '/movies/search', to: 'movies#search', as: :search_movie

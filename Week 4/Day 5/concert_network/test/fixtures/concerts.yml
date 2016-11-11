@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artist: MyString
+  venue: MyString
+  city: MyString
+  date: 2016-11-11
+  price: 1
+  description: MyText
+
+two:
+  artist: MyString
+  venue: MyString
+  city: MyString
+  date: 2016-11-11
+  price: 1
+  description: MyText

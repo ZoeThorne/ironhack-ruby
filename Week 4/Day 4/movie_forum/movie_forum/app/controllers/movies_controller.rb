@@ -10,11 +10,16 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @comments = @movie.comments
+    @movie = Movie.find_by(id: params[:id])
+    @comment = Comment.new
+    render "show"
   end
 
   # GET /movies/new
   def new
     @movie = Movie.new
+
   end
 
   # GET /movies/1/edit

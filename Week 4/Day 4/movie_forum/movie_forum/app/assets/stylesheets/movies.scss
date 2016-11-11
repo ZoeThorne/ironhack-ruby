@@ -1,3 +1,71 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Sidebar */
+
+.sidebar {
+	background: black;
+	color: white;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: -20px;
+	padding: 10px;
+}
+
+.sidebar-contents {
+
+}
+
+.sidebar h1 {
+
+}
+
+.sidebar img {
+	width: 100px;
+}
+
+/* Main */
+
+.main {
+	padding-top: 100px;
+}
+
+.comment {
+	background: #ffff99;
+	height: 100%;
+	width: 100%;
+	margin-top: -100px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.author {
+	background: #ffff1a;
+	color: black;
+	margin-left: -8px;
+	margin-right: -8px;
+	margin-top: -8px;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.content {
+	margin: 10px;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	color: black;
+}
+
+.comment-form {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+#comment_content {
+	width: 100%;
+}
