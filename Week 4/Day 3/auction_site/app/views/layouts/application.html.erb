@@ -3,12 +3,44 @@
   <head>
     <title>AuctionSite</title>
     <%= csrf_meta_tags %>
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<header>
+  		<nav class="col-lg-12">
+  			<div class="row">
+
+  				<div class="col-lg-2"><!-- Logo -->
+  					<%= image_tag("zbay.png", class:"logo") %>
+  				</div>
+
+  				<div class="col-lg-6 nav-bar"><!-- Links -->
+  					<ul>
+  						<li><%= link_to 'View All Users', users_path %></li>
+  						<li><%= link_to 'Add New User', new_user_path %></li>
+  						<li>View All Products</li>
+  					</ul>
+  				</div>
+
+  				<div class="col-lg-2 search-bar"><!-- Search Bar -->
+  					<form action="#" method="POST">
+  						<div>
+   						 	<input type="text" name="#" id="#" placeholder="Search for a product...">
+   						 	<button type="submit" class="btn btn-primary btn-md">Search</button>
+  						</div>
+
+  							
+  							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					</form>
+  				</div>
+
+  			</div>
+  		</nav>
+  	</header>
     <%= yield %>
   </body>
 </html>

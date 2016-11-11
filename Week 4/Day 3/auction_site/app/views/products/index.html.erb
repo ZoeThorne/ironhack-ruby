@@ -1,15 +1,20 @@
-<h1><%= @user.name %></h1>
+<div class="col-lg-12 title">
+	<div class="row">
+		<h1><%= @user.name %></h1>
+	</div>
+</div>
 
-<ul>
-	<% @products.each do |product| %>
-		<li>
-			<strong><%= product.title %></strong> :
-			<%= product.description %> -
-			<em><%= product.deadline %></em>
-		</li>
-	<% end %>
-</ul>
+<div class="container-fluid">
+		<<% @products.each do |product| %>
+			<div class="col-lg-4 product">
+				<h3><strong><%= product.title %></strong></h3>
+				<p><%= product.description %></p>
+				<p>Deadline: <em><%= product.deadline %></em></p>
+				<button type="button" class="btn btn-default">Bid now!</button>
+			</div>
+		<% end %>
+</div>
+
 
 
 <%= link_to 'Add a product', new_product_path %>
-<%= link_to 'Back to users', users_path %>	

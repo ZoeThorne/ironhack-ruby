@@ -13,3 +13,95 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	margin: 0;
+	background: #e6ffff;
+}
+
+/* Navigation Bar */
+
+container-fluid {
+	width: 110%;
+}
+
+nav {
+	background: white;
+	color: black;
+	border-bottom: 1px solid black;
+	font: 10pt Verdana, Arial, sans-serif;
+	height: 100%;
+	margin: -15px;
+	padding: 10px;
+    width: 110%;;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+
+}
+
+.logo {
+	height: 80px;
+	padding: 10px;
+	margin-left: 30px;
+	margin-top: 20px;
+
+}
+
+.nav-bar{
+	margin-left: 10px;
+	margin-right: 10px;
+	font-weight: bold;
+	margin-top: 40px;
+	display: inline-block;
+}
+
+nav li {
+	display: inline-block;
+	padding-left: 15px;
+	margin-left: 10px;
+	padding-top: 10px;
+}
+
+.link {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	padding-top: 20px;
+	margin-left: -110px;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.search-bar {
+	display: inline-block;
+	width: 250px;
+	padding-top: 35px;
+	line-height: 2;
+	color:black;
+	vertical-align: top;
+}
+
+.btn-md {
+	margin-left: 10;
+	margin-top: 10px;
+	margin-right: -100px;
+	vertical-align: top;
+}
+
+input {
+	margin-top: 10px;
+	vertical-align: top;
+}
+
+/* Main Section */
+
+h1 {
+	text-align: center;
+}
+
+.main {
+	margin: 10px;
+	padding: 10px;
+	padding-top: 110px;
+}
