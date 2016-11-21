@@ -25,7 +25,7 @@ function createMap(lat, lng){ // Create new Map object in the #map div
   var position = {lat: lat, lng: lng};
   var mapOptions = {
     center: position, // Centre on the position
-    zoom: 10  // Zoom to city level
+    zoom: 2  // Zoom to world level
   };
   map = new google.maps.Map($('#map')[0], mapOptions);
   createMarker(lat,lng); // Automatically add marker for current position
@@ -35,6 +35,7 @@ function createMap(lat, lng){ // Create new Map object in the #map div
      jsonifiedPosition.forEach(function(pos){
     createMarker(pos.lat,pos.lng);
   });
+     $('.js-number-cities').append("<h3>Cities visited: "+jsonifiedPosition.length+"</h3>")
   }
  
   
@@ -64,6 +65,9 @@ function setupAutocomplete(){
       var myLatLng = {lat: lat, lng: lng};
       visitedPlaces.push(myLatLng);
       window.localStorage.setItem("placesArray", JSON.stringify(visitedPlaces));
+      var jsonifiedPosition = JSON.parse(window.localStorage.getItem("placesArray"));
+      $('.js-number-cities').empty();
+      $('.js-number-cities').append("<h3>Cities visited: "+jsonifiedPosition.length+"</h3>")
     } else {
       alert("The place has no location...?")
     }

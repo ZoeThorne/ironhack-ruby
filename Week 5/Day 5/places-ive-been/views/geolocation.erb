@@ -3,12 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Geolocation API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="input-wrapper">
-      <input type="text" name="get-places" id="get-places">
-    </div>
+    <header class="container-fluid">
+      <div class="col-12-lg title-bar">
+        <div class="row">
+          <h1>Where in the world have you been?</h1>
+          <div id="input-wrapper">
+             <input type="text" name="get-places" id="get-places">
+          </div>
+          <div class="js-number-cities">
+          </div>
+        </div>
+      </div>
+    </header>
     <div id="map"></div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="geolocation.js"></script>
